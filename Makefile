@@ -16,4 +16,4 @@ clean:
 	rm -rf ${BUILD_DIR}
 
 watch:
-	watchmedo shell-command --patterns="*.md" --wait --command="make"
+	watchmedo shell-command --patterns="*.md;*.erb" --wait --command="make" --recursive
