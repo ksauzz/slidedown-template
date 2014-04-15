@@ -7,10 +7,13 @@ MARKDOWN = ${SOURCE_DIR}/${NAME}.md
 
 all: clean build
 
+deps:
+	bundle install
+
 build:
 	@mkdir -p ${BUILD_DIR}
 	@cp -rf ${SOURCE_DIR}/images ${BUILD_DIR}/images
-	slidedown ${MARKDOWN} -t ${PWD}/${TEPMLATE_DIR}/default_ja > ${HTML}
+	bundle exec slidedown ${MARKDOWN} -t ${PWD}/${TEPMLATE_DIR}/default_ja > ${HTML}
 
 clean:
 	rm -rf ${BUILD_DIR}
